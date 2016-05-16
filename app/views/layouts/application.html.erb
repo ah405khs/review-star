@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>나만의 평점 서비스</title>
+  <link rel="stylesheet" href="https://bootswatch.com/lumen/bootstrap.min.css">  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <!--jQuery가 먼저 로드되고, 이후 부트스트랩 자바스크립트 로드하기-->
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <!--container-->
+  <div class="container">
+    <div class="header">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">About</a></li>
+          <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+     <h3 class="text-muted">과자 평점 서비스</h3>
+    </div>
+    
+      <%= yield %>
+      
+    <!-- footer -->
+    <footer class="footer">
+      <p>&copy; Woori Ahn 2016</p>
+    </footer><!-- / footer -->
+  </div> <!-- /container -->
 </body>
 </html>
