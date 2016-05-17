@@ -14,6 +14,16 @@ class HomeController < ApplicationController
     
     end
 
-    def update
+    def create
+        @snack = Snack.create(
+            user_id: 1,
+            title: params[:title],
+            summary: params[:summary],
+            url: params[:url],
+            intro: params[:intor]
+        )
+        
+        #redirect_to :back #작업이 끝나고 자신을 호출했던 페이지로 돌아감(여기선 new)
+        edirect_to '/'
     end
 end
