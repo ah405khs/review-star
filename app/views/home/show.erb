@@ -1,9 +1,9 @@
 <!-- 들어 올때마다 랜덤하게 뜨는 과자 배너 -->
 <div class="jumbotron">
-  <img src="http://www.ht.co.kr/fileUpload/product/1440676761946579.jpg">
-  <h1>허니버터칩</h1>
-  <h4>달콤~한 벌꿀이 들어갔어요!</h4>
-  <p class="lead">12시간의 발효과정을 거쳐 만들어진 프랑스산 버터가 들어간 달콤한 맛이 일품인 감자칩</p>
+  <img src="<%= @snack.url %>">
+  <h1><%= @snack.title %></h1>
+  <h4><%= @snack.summary %></h4>
+  <p class="lead"><%= @snack.intro %></p>
   
   <form>
     <!-- 평점 별점 -->
