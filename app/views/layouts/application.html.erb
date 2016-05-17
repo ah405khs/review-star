@@ -17,6 +17,12 @@
         <ul class="nav nav-pills pull-right">
           <li role="presentation" class="active"><a href="/">모든과자</a></li>
           <li role="presentation"><a href="/home/new">과자등록하기</a></li>
+          <% if user_signed_in?%>
+            <li role="presentation"><a href="/users/sign_out" data-method="delete">로그아웃</a></li>
+          <% else %>
+            <li role="presentation"><a href="/users/sign_in">로그인</a></li>
+            <li role="presentation"><a href="/users/sign_up">회원가입</a></li>
+          <% end %>
         </ul>
       </nav>
      <h3 class="text-muted">과자 평점 서비스</h3>

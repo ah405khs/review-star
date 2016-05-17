@@ -22,10 +22,10 @@
 <div class="row marketing">
   <!-- 데이터베이스에서 불러와 반복하여 뿌려줄 방송 정보 -->
   <% @snacks.each do |s| %>
-    <div class="col-lg-6">
+    <div class="col-md-4">
       <img src="<%=s.url%>" class="img-thumbnail">
-      <h4><%= s.title %></h4>
-      <h3><%= s.summary %></h3>
+      <h3><%= s.title %></h3>
+      <h5><%= s.summary %></h5>
       <p><%= s.intro %></p>
       <div class="star">
         <span class="star-rating star-small">
@@ -40,4 +40,5 @@
       <p><a class="btn btn-sm btn-success" href="/home/show/<%=s.id%>" role="button">자세히 보기</a></p>
     </div>
   <% end %>
+</div>
   <!-- 끝 -->
