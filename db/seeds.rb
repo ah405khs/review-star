@@ -15,9 +15,7 @@ Snack.create(user_id: 1, title: "홈런볼", url: "http://www.ht.co.kr/fileUploa
              summary: "대한민국 단 하나! Premium 과자!", intro: "동글동글 야구공 모양 속에 달콤한 초콜렛이 콕콕!")
              
 Snack.create(user_id: 1, title: "오예스", url: "http://www.ht.co.kr/fileUpload/product/1440660773478547.jpg", 
-             summary: "촉촉하고 부드러운 리얼 케이크", intro: "* 100% 생수로 만들어 촉촉하고 부드러운 리얼 케이크<br/>
-                                                               * 1984년 출시 이후 지금까지 사랑받는 오예스<br/>
-                                                               * 기쁜일이 있을때 파티용으로, 출출 할때 간식용으로 함께하세요")
+             summary: "촉촉하고 부드러운 리얼 케이크", intro: "100% 생수로 만들어 촉촉하고 부드러운 리얼 케이크")
                                                
 Snack.create(user_id: 1, title: "화이트엔젤 큐티스", url: "http://www.ht.co.kr/fileUpload/product/1440664662275959.jpg", 
              summary: "깜찍한 캐릭터 초콜릿이 먹기 좋게 손잡이에~", intro: "깜찍한 동물 모양의 스틱 초콜릿을 친구와 함께 나눠 먹을 수 있어요")
