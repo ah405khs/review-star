@@ -42,11 +42,13 @@
               <!-- 평점 별점 -->
               <div class="star">
                 <span class="star-rating star-small">
-                  <i class="on"></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                  <% 1.upto(5) do |i| %>
+                    <% if i == c.score %>
+                      <i class="on"></i>
+                    <% else %>
+                      <i></i>
+                    <% end %>
+                  <% end %>
                 </span>
               </div><!-- / 평점 별점 -->    
               <p><%=c.content %></p>
