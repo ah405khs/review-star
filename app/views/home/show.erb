@@ -5,9 +5,11 @@
   <h4><%= @snack.summary %></h4>
   <p class="lead"><%= @snack.intro %></p>
   
-  <form>
+  <!--<form>-->
     <!-- 평점 별점 -->
+    <%= form_tag "/home/save_star", method: "post" do %>
     <div class="star">
+      <input type="hidden" name="snack_id" value="<%= @snack.id %>">
       <span class="star-rating">
         <input type="radio" name="rating" value="1"><i></i>
         <input type="radio" name="rating" value="2"><i></i>
@@ -20,7 +22,8 @@
     <input class="form-control" type="text" name="comment" 
     style="margin-bottom: 15px;" placeholder="댓글을 입력해주세요...">
     <p><button class="btn btn-primary" type="submit">댓글달기</button></p>
-  </form>
+  <!--</form>-->
+  <% end %>
 </div>
 <!-- 배너 끝 -->
 
@@ -30,11 +33,12 @@
    <!-- row -->
    <div class="row">
       <div class="col-lg-12">
-      
         <ul class="list-group">
             <li class="list-group-item"><h4>댓글</h4></li>
+            
+            <% @snack.comments.each do |c|%>
             <li class="list-group-item">
-              <h5>쓴사람</h5>
+              <h5><%=c.user.email %></h5>
               <!-- 평점 별점 -->
               <div class="star">
                 <span class="star-rating star-small">
@@ -45,26 +49,11 @@
                   <i></i>
                 </span>
               </div><!-- / 평점 별점 -->    
-              <p>내용내용</p>
+              <p><%=c.content %></p>
               <hr>
             </li>
-            <li class="list-group-item">
-              <h5>쓴사람2</h5>
-              <!-- 평점 별점 -->
-              <div class="star">
-                <span class="star-rating star-small">
-                  <i></i>
-                  <i class="on"></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </span>
-              </div><!-- / 평점 별점 -->    
-              <p>내용내용2</p>
-              <hr>
-            </li>
-        </ul>
-      
+            <% end %>
+        </ul>      
       </div>
     </div><!-- / row -->
 </div><!-- /댓글리스트 -->
