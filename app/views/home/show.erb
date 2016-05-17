@@ -4,7 +4,7 @@
   <h1><%= @snack.title %></h1>
   <h4><%= @snack.summary %></h4>
   <p class="lead"><%= @snack.intro %></p>
-  
+  <p id="count"><%= @snack.avg.round(1) %> 점(<%= @snack.comments.count %> 명)</p> <%# 소수 첫번째 자리까지 나타내기 %>
   <!--<form>-->
     <!-- 평점 별점 -->
     <%= form_tag "/home/save_star", method: "post" do %>

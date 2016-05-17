@@ -8,13 +8,16 @@
   <!-- class="on" 위치에 따라 채워지는 별이 다름 -->
   <div class="star">
     <span class="star-rating">
-      <i></i>
-      <i></i>
-      <i class="on"></i>
-      <i></i>
-      <i></i>
+      <% 1.upto(5) do |i|%>
+        <% if i == @banner.avg.round(0) %>
+        <i class="on"></i>
+        <% else %>
+        <i></i>
+        <% end %>
+      <% end %>
     </span>
   </div><!-- / 평점 별점 -->
+  <p id="count"><%= @banner.avg.round(1) %> 점(<%= @banner.comments.count %> 명)</p> <%# 소수 첫번째 자리까지 나타내기 %>
   <p><a class="btn btn-lg btn-success" href="/home/show/<%= @banner.id %>" role="button">자세히 보기</a></p>
 </div>
 <!-- 배너 끝 -->
@@ -27,16 +30,18 @@
       <h3><%= s.title %></h3>
       <h5><%= s.summary %></h5>
       <p><%= s.intro %></p>
-      <div class="star">
-        <span class="star-rating star-small">
-          <i></i>
-          <i></i>
-          <i></i>
-          <i class="on"></i>
-          <i></i>
-        </span>
-        <p id="count">4.2 점 (250 명)</p>
-      </div>
+        <div class="star">
+          <span class="star-rating star-small">
+            <% 1.upto(5) do |i| %>
+              <% if i == s.avg.round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+          <p id="count"><%= s.avg.round(1) %> 점(<%= s.comments.count %> 명)</p> <%# 소수 첫번째 자리까지 나타내기 %>
+        </div><!-- / 평점 별점 -->    
       <p><a class="btn btn-sm btn-success" href="/home/show/<%=s.id%>" role="button">자세히 보기</a></p>
     </div>
   <% end %>
